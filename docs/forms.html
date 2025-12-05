@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../toon.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Toon CSS</h1>
+    </header>
+    <nav>
+      <a href="./">Home</a>
+      <a href="./buttons.html">Buttons</a>
+      <a href="./cards.html">Cards</a>
+      <a href="./forms.html">Forms</a>
+      <a href="./grids.html">Grids</a>
+    </nav>
+    <main class="center">
+      <div class="card lg">
+        <h1>Form Elements</h1>
+        <p>
+          Toon CSS offers styled form elements to create visually appealing and
+          user-friendly forms. Below are examples of various form components.
+        </p>
+        <form class="sm">
+          <h1 class="center">Login</h1>
+
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            class="input"
+            placeholder="you@example.com"
+          />
+
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            class="input"
+            placeholder="Enter password"
+          />
+
+          <div class="buttons">
+            <button type="reset" class="button secondary">Reset</button>
+            <button type="submit" class="button primary">Login</button>
+          </div>
+        </form>
+      </div>
+      <div class="card lg">
+        <h1>Usage</h1>
+        <p>
+          To use the form styles, simply use the <code>form</code> element along
+          with the <code>input</code> class for input fields. Buttons within the
+          form should use the <code>button</code> class.
+        </p>
+        <p>
+          The form layout is managed using CSS Grid to ensure proper alignment
+          of labels and input fields. This layout helps maintain a clean and
+          organized appearance. Simply place your labels and inputs within the
+          <code>form</code> element as shown in the example below.
+        </p>
+        <p>
+          You can specify the size of the form by adding one of the following
+          classes to the <code>form</code> element: <code>xxs</code>,
+          <code>xs</code>, <code>sm</code>, <code>md</code>, <code>lg</code>,
+          <code>xl</code> and <code>xxl</code>.
+        </p>
+        <h2>Form Titles</h2>
+        <p>
+          Use a <code>h1</code> for the card title, and regular text elements
+          for the content. <code>h2</code> can be used for subheadings.
+        </p>
+        <p>
+          To create a form without a title, simply omit the
+          <code>h1</code> element and add the <code>no-title</code> class to the
+          <code>form</code> element. This will adjust the padding and margin to
+          ensure proper spacing.
+        </p>
+        <h2>Buttons in Forms</h2>
+        <p>
+          You can insert buttons into the form as needed, using a container with
+          the <code>buttons</code> class to group them together, and properly
+          align them within the form.
+        </p>
+        <h2>Text Inputs</h2>
+        <p>
+          Apply the <code>input</code> class to standard input fields to style
+          them consistently with the Toon CSS theme. This includes all input
+          types, except the <code>image</code> type.
+          <code>textarea</code> elements also receive the same styling when
+          inside a form.
+        </p>
+        <code>
+          &lt;form&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Text Input Example&lt;/h1&gt;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="text-input"&gt;Text
+          Input:&lt;/label&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" id="text-input"
+          class="input" placeholder="Enter text" /&gt;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="buttons"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
+          type="reset" class="button secondary"&gt;Reset&lt;/button&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
+          type="submit" class="button primary"&gt;Submit&lt;/button&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+          &lt;/form&gt;
+        </code>
+        <section class="example">
+          <form>
+            <h1>Text Input Example</h1>
+
+            <label for="text-input">Text Input:</label>
+            <input
+              type="text"
+              id="text-input"
+              class="input"
+              placeholder="Enter text"
+            />
+
+            <label for="number-input">Number Input:</label>
+            <input
+              type="number"
+              id="number-input"
+              class="input"
+              placeholder="Enter number"
+            />
+
+            <div class="buttons">
+              <button type="reset" class="button secondary">Reset</button>
+              <button type="submit" class="button primary">Submit</button>
+            </div>
+          </form>
+        </section>
+        <h2>Textarea</h2>
+        <p>
+          Use the <code>textarea</code> element for multi-line text input. When
+          placed inside a form, it will automatically receive the appropriate
+          styling consistent with other input fields.
+        </p>
+        <code>
+          &lt;form&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Textarea Example&lt;/h1&gt;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;label
+          for="message"&gt;Message:&lt;/label&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea id="message" rows="4"
+          placeholder="Enter your message here..."&gt;&lt;/textarea&gt;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="buttons"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
+          type="reset" class="button secondary"&gt;Reset&lt;/button&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
+          type="submit" class="button primary"&gt;Submit&lt;/button&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+          &lt;/form&gt;
+        </code>
+        <section class="example">
+          <form>
+            <h1>Textarea Example</h1>
+
+            <label for="message">Message:</label>
+            <textarea
+              id="message"
+              rows="4"
+              placeholder="Enter your message here..."
+            ></textarea>
+
+            <div class="buttons">
+              <button type="reset" class="button secondary">Reset</button>
+              <button type="submit" class="button primary">Submit</button>
+            </div>
+          </form>
+        </section>
+        <h2>Checkbox Example</h2>
+        <p>
+          Use the <code>checkbox</code> input type to create checkboxes within
+          your form. Each checkbox should be paired with a corresponding label
+          for clarity.
+        </p>
+        <code>
+          &lt;form&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Checkbox Example&lt;/h1&gt;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="checkbox1"&gt;Option
+          1:&lt;/label&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="checkbox" id="checkbox1"
+          /&gt;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="checkbox2"&gt;Option
+          2:&lt;/label&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="checkbox" id="checkbox2"
+          checked /&gt;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="buttons"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
+          type="reset" class="button secondary"&gt;Reset&lt;/button&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
+          type="submit" class="button primary"&gt;Submit&lt;/button&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+          &lt;/form&gt;
+        </code>
+        <section class="example">
+          <form>
+            <h1>Checkbox Example</h1>
+
+            <label for="checkbox1">Option 1:</label>
+            <input type="checkbox" id="checkbox1" />
+
+            <label for="checkbox2">Option 2:</label>
+            <input type="checkbox" id="checkbox2" checked />
+
+            <div class="buttons">
+              <button type="reset" class="button secondary">Reset</button>
+              <button type="submit" class="button primary">Submit</button>
+            </div>
+          </form>
+        </section>
+        <h2>Radio Buttons</h2>
+        <p>
+          Use the <code>radio</code> input type to create radio buttons within
+          your form. Wrap radio buttons in a container with the
+          <code>radio</code> class to ensure proper spacing and alignment within
+          the group.
+        </p>
+        <code>
+          &lt;form&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Radio Button Example&lt;/h1&gt;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="radio"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="radio"
+          id="radio1" name="radio-group" checked /&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label
+          for="radio1"&gt;Radio Option 1&lt;/label&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="radio"
+          id="radio2" name="radio-group" /&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label
+          for="radio2"&gt;Radio Option 2&lt;/label&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="radio"
+          id="radio3" name="radio-group" /&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label
+          for="radio3"&gt;Radio Option 3&lt;/label&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="buttons"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
+          type="reset" class="button secondary"&gt;Reset&lt;/button&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
+          type="submit" class="button primary"&gt;Submit&lt;/button&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+          &lt;/form&gt;
+        </code>
+        <section class="example">
+          <form>
+            <h1>Radio Button Example</h1>
+
+            <label>Radio:</label>
+            <div class="radio">
+              <input type="radio" id="radio1" name="radio-group" checked />
+              <label for="radio1">Radio Option 1</label>
+              <input type="radio" id="radio2" name="radio-group" />
+              <label for="radio2">Radio Option 2</label>
+              <input type="radio" id="radio3" name="radio-group" />
+              <label for="radio3">Radio Option 3</label>
+            </div>
+
+            <div class="buttons">
+              <button type="reset" class="button secondary">Reset</button>
+              <button type="submit" class="button primary">Submit</button>
+            </div>
+          </form>
+        </section>
+        <h2>Select Dropdown</h2>
+        <p>
+          Use the <code>select</code> element to create dropdown menus within
+          your form. Each <code>select</code> should be paired with a
+          corresponding label for clarity.
+        </p>
+        <code>
+          &lt;form&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Select Dropdown
+          Example&lt;/h1&gt;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;label
+          for="select"&gt;Select:&lt;/label&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;select id="select"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value=""
+          disabled selected&gt;Select an option&lt;/option&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option
+          value="option1"&gt;Option 1&lt;/option&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option
+          value="option2"&gt;Option 2&lt;/option&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option
+          value="option3"&gt;Option 3&lt;/option&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/select&gt;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="buttons"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
+          type="reset" class="button secondary"&gt;Reset&lt;/button&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
+          type="submit" class="button primary"&gt;Submit&lt;/button&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+          &lt;/form&gt;
+        </code>
+        <section class="example">
+          <form>
+            <h1>Select Dropdown Example</h1>
+
+            <label for="select">Select:</label>
+            <select id="select">
+              <option value="" disabled selected>Select an option</option>
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+            </select>
+
+            <div class="buttons">
+              <button type="reset" class="button secondary">Reset</button>
+              <button type="submit" class="button primary">Submit</button>
+            </div>
+          </form>
+        </section>
+        <h2>Fieldset</h2>
+        <p>
+          Use the <code>fieldset</code> element to group related form controls
+          together. The <code>legend</code> element provides a caption for the
+          fieldset.
+        </p>
+        <code>
+          &lt;form&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Fieldset Example&lt;/h1&gt;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;fieldset&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;legend&gt;Fieldset&lt;/legend&gt;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label
+          for="email2"&gt;Email:&lt;/label&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="email"
+          id="email2" placeholder="you@example.com" /><br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label
+          for="password2"&gt;Password:&lt;/label&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input
+          type="password" id="password2" placeholder="password" /&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/fieldset&gt;<br /><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="buttons"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
+          type="reset" class="button secondary"&gt;Reset&lt;/button&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
+          type="submit" class="button primary"&gt;Submit&lt;/button&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+          &lt;/form&gt;
+        </code>
+        <section class="example">
+          <form>
+            <h1>Fieldset Example</h1>
+
+            <fieldset>
+              <legend>Fieldset</legend>
+
+              <label for="email2">Email:</label>
+              <input type="email" id="email2" placeholder="you@example.com" />
+              <label for="password2">Password:</label>
+              <input type="password" id="password2" placeholder="password" />
+            </fieldset>
+            <div class="buttons">
+              <button type="reset" class="button secondary">Reset</button>
+              <button type="submit" class="button primary">Submit</button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2025 luximus-hunter. MIT licensed. Made with &#x2764;</p>
+    </footer>
+  </body>
+</html>

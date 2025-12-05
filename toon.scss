@@ -1,0 +1,604 @@
+/* Toon CSS */
+/* MIT Licensed 2025 luximus-hunter */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+// ==========================
+//         Variables
+// ==========================
+$global-element-height: 2.5rem;
+$global-border-width: 0.2rem;
+$global-border-radius: 0.5rem;
+$global-animation-duration: 0.1s;
+$global-shadow: 0 0 0.5rem hsl(210, 10%, 70%, 0.3);
+
+$button-height: $global-element-height;
+$button-3d-height: 0.5rem;
+$button-border-radius: $global-border-radius;
+$button-border-width: $global-border-width;
+$button-animation-duration: $global-animation-duration;
+
+$button-hover-darken: 5%;
+$button-active-darken: 10%;
+$button-shadow-darken: 15%;
+
+$button-colors: (
+  "primary": hsl(211, 100%, 50%),
+  "secondary": hsl(210, 17%, 85%),
+  "success": hsl(134, 61%, 50%),
+  "danger": hsl(354, 70%, 50%),
+  "warning": hsl(45, 100%, 50%),
+  "info": hsl(188, 78%, 50%),
+  "light": hsl(0, 0%, 90%),
+  "dark": hsl(0, 0%, 30%),
+  "red": hsl(0, 100%, 50%),
+  "orange": hsl(30, 100%, 50%),
+  "yellow": hsl(60, 100%, 50%),
+  "lime": hsl(90, 100%, 50%),
+  "green": hsl(120, 100%, 35%),
+  "teal": hsl(180, 100%, 35%),
+  "blue": hsl(220, 100%, 50%),
+  "purple": hsl(280, 100%, 50%),
+  "pink": hsl(320, 100%, 50%),
+);
+
+// ==========================
+//          Layout
+// ==========================
+// Ensure consistent box sizing and font across the app
+* {
+  font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Reduce motion for users who prefer it
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+// Link styles
+a {
+  text-decoration: underline;
+  color: inherit;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: $global-border-radius;
+
+  &:hover {
+    background-color: hsl(0, 0, 100%, 0.25);
+  }
+}
+
+// Grid
+.grid {
+  display: grid;
+  gap: 0.5rem;
+
+  @each $i, $val in (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12) {
+    &.cols-#{$i} {
+      grid-template-columns: repeat($i, 1fr);
+    }
+  }
+
+  &.auto-sm {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  &.auto-md {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  &.auto-lg {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  &.auto-xl {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+body {
+  padding: 0rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: hsl(0, 0, 90%);
+  color: hsl(0, 0, 20%);
+
+  & > header {
+    $color: map-get($button-colors, "primary");
+
+    background-color: $color;
+    color: if(
+      lightness($color) > 45%,
+      hsl(0, 0%, 0%, 0.7),
+      hsl(0, 0%, 100%, 0.8)
+    );
+    padding: 1rem 2rem;
+    display: flex;
+    gap: 2rem;
+    border-bottom: 0.3rem solid darken($color, 10%);
+
+    align-items: center;
+    justify-content: space-between;
+
+    & > nav {
+      background-color: transparent;
+      padding: 0;
+      border: none;
+    }
+  }
+
+  nav {
+    $color: map-get($button-colors, "secondary");
+    background-color: $color;
+    color: if(
+      lightness($color) > 45%,
+      hsl(0, 0%, 0%, 0.7),
+      hsl(0, 0%, 100%, 0.8)
+    );
+
+    padding: 0.5rem 1.5rem;
+    user-select: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    border-bottom: 0.2rem solid darken($color, 10%);
+    box-shadow: 0 0.5rem 0.5rem hsl(210, 10%, 70%, 0.3);
+
+    a {
+      font-size: 1.25rem;
+      text-decoration: none;
+    }
+  }
+
+  & > main {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    &.center {
+      align-items: center;
+    }
+  }
+
+  & > footer {
+    background-color: hsl(210, 10%, 20%);
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+    padding: 1rem;
+    user-select: none;
+  }
+}
+
+// ==========================
+//          Buttons
+// ==========================
+.button {
+  $height: calc($button-height - $button-3d-height);
+
+  // Layout
+  display: flex;
+  height: $height;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: $button-3d-height;
+  padding: 0 1rem;
+  min-width: fit-content;
+
+  // Square Layout
+  &.square {
+    width: $height;
+    padding: 0;
+  }
+
+  // Positioning
+  position: relative;
+  top: 0;
+
+  // Border
+  border-width: $button-border-width;
+  border-style: solid;
+  border-radius: $button-border-radius;
+
+  // Font
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  user-select: none;
+
+  // 3d Effect
+  box-shadow: 0 $button-3d-height;
+
+  // Other
+  cursor: pointer;
+  outline: none;
+  transition: top $button-animation-duration ease-in-out,
+    background-color $button-animation-duration ease-in-out,
+    border-color $button-animation-duration ease-in-out,
+    color $button-animation-duration ease-in-out,
+    box-shadow $button-animation-duration ease-in-out;
+
+  &:active:not(:disabled) {
+    top: calc($button-3d-height / 2);
+    box-shadow: 0 calc($button-3d-height / 2);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    box-shadow: none !important;
+    top: calc($button-3d-height / 2);
+  }
+
+  // Default Style (Secondary)
+  $default-color: map-get($button-colors, "secondary");
+  $default-hover: darken($default-color, $button-hover-darken);
+  $default-active: darken($default-color, $button-active-darken);
+
+  background-color: $default-color;
+  border-color: darken($default-color, $button-hover-darken);
+  color: hsl(0, 0%, 0%, 0.7);
+  box-shadow: 0 $button-3d-height darken($default-color, $button-shadow-darken);
+
+  &:hover:not(:disabled) {
+    background-color: $default-hover;
+    border-color: darken($default-hover, $button-hover-darken);
+    box-shadow: 0 $button-3d-height
+      darken($default-hover, $button-shadow-darken);
+  }
+
+  &:active:not(:disabled) {
+    background-color: $default-active;
+    border-color: darken($default-active, $button-active-darken);
+    box-shadow: 0 calc($button-3d-height / 2)
+      darken($default-active, $button-shadow-darken);
+  }
+
+  &:disabled {
+    background-color: lighten($default-color, 30%);
+    border-color: lighten(darken($default-color, $button-active-darken), 30%);
+    color: lighten(hsl(0, 0%, 0%, 0.7), 40%);
+  }
+
+  // Color Variants
+  @each $name, $color in $button-colors {
+    $color-hover: darken($color, 10%);
+    $color-active: darken($color, 15%);
+    $color-text: if(
+      lightness($color) > 45%,
+      hsl(0, 0%, 0%, 0.7),
+      hsl(0, 0%, 100%, 0.8)
+    );
+
+    &.#{$name} {
+      background-color: $color;
+      border-color: darken($color, $button-hover-darken);
+      color: $color-text;
+      box-shadow: 0 $button-3d-height darken($color, $button-shadow-darken);
+
+      &:hover:not(:disabled) {
+        background-color: $color-hover;
+        border-color: darken($color-hover, $button-hover-darken);
+        box-shadow: 0
+          $button-3d-height
+          darken($color-hover, $button-shadow-darken);
+      }
+
+      &:active:not(:disabled) {
+        background-color: $color-active;
+        border-color: darken($color-active, $button-active-darken);
+        box-shadow: 0
+          calc($button-3d-height / 2)
+          darken($color-active, $button-shadow-darken);
+      }
+
+      &:disabled {
+        background-color: lighten($color, 30%);
+        border-color: lighten(darken($color, $button-active-darken), 30%);
+        color: lighten($color-text, 40%);
+      }
+    }
+  }
+}
+
+.group {
+  display: flex;
+
+  .button {
+    border-radius: 0;
+  }
+
+  .button:first-child {
+    border-top-left-radius: $global-border-radius;
+    border-bottom-left-radius: $global-border-radius;
+  }
+
+  .button:last-child {
+    border-top-right-radius: $global-border-radius;
+    border-bottom-right-radius: $global-border-radius;
+  }
+}
+
+// ==========================
+//           Cards
+// ==========================
+.card {
+  // Layout
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 2rem 1rem 1rem 1rem;
+  margin: 2rem 0 0 0;
+
+  // Positioning
+  position: relative;
+
+  // Border
+  border-width: $global-border-width;
+  border-style: solid;
+  border-radius: $global-border-radius;
+  border-color: hsl(210, 10%, 80%);
+
+  // Background
+  background-color: hsl(0, 0, 95);
+
+  // Shadow
+  box-shadow: $global-shadow;
+
+  // States
+  opacity: 1;
+  transition: opacity $global-animation-duration ease-in-out;
+
+  &.no-title {
+    padding-top: 1rem;
+    margin: 0;
+  }
+
+  &.closed {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  & > .close {
+    position: absolute;
+    right: calc(($button-height - $global-border-width * 2) / 2) * -1;
+    top: calc(($button-height - $global-border-width * 2) / 2) * -1;
+  }
+
+  & > h1 {
+    user-select: none;
+    padding: 0.25rem 2rem;
+    border-width: $global-border-width;
+    border-style: solid;
+    border-radius: $global-border-radius;
+    border-color: hsl(210, 10%, 80%);
+    margin: 0;
+    position: absolute;
+    font-size: 1.5rem;
+    background-color: hsl(210, 17%, 98%);
+    box-shadow: 0 0.5rem 0.5rem hsl(210, 10%, 70%, 0.3);
+
+    top: -1.5rem - calc($global-border-width / 2);
+    left: 1rem;
+
+    &.center {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &.right {
+      left: auto;
+      right: 1rem;
+    }
+  }
+
+  & > h2 {
+    user-select: none;
+    font-size: 1.25rem;
+    margin: 0;
+  }
+
+  & > .buttons {
+    display: flex;
+    gap: 0.5rem;
+
+    &.col {
+      flex-direction: column;
+    }
+
+    & > .button {
+      flex: 1;
+    }
+  }
+
+  &.xxs {
+    max-width: 200px;
+  }
+  &.xs {
+    max-width: 300px;
+  }
+
+  &.sm {
+    max-width: 400px;
+  }
+
+  &.md {
+    max-width: 600px;
+  }
+
+  &.lg {
+    max-width: 800px;
+  }
+
+  &.xl {
+    max-width: 1000px;
+  }
+
+  &.xxl {
+    max-width: 1200px;
+  }
+}
+
+// ==========================
+//           Forms
+// ==========================
+form {
+  @extend .card;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: max-content 1fr;
+
+  label {
+    display: block;
+    height: $global-element-height;
+    line-height: $global-element-height;
+    align-self: flex-start;
+    justify-self: start;
+    user-select: none;
+  }
+
+  & > .buttons {
+    grid-column: span 2;
+  }
+
+  & > .radio {
+    display: grid;
+    grid-template-columns: calc($button-height - $button-3d-height) 1fr;
+    gap: 0.5rem;
+  }
+
+  fieldset {
+    @extend .card;
+    grid-column: span 2;
+    box-shadow: none;
+    padding: 1.5rem 1rem 1rem 1rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: max-content 1fr;
+
+    legend {
+      user-select: none;
+      padding: 0.125rem 1rem;
+      border-width: $global-border-width;
+      border-style: solid;
+      border-radius: $global-border-radius;
+      border-color: hsl(210, 10%, 80%);
+      margin: 0;
+      position: absolute;
+      font-size: 1rem;
+      background-color: hsl(210, 17%, 98%);
+      box-shadow: 0 0.5rem 0.5rem hsl(210, 10%, 70%, 0.3);
+
+      top: -1rem - calc($global-border-width / 2);
+      left: 1rem;
+    }
+  }
+
+  input,
+  textarea {
+    height: $global-element-height;
+    padding: 0.5rem;
+    border-width: $global-border-width;
+    border-style: solid;
+    border-radius: $global-border-radius;
+    border-color: hsl(210, 10%, 80%);
+    font-size: inherit;
+
+    &:focus {
+      outline: none;
+      border-color: map-get($button-colors, "primary");
+    }
+  }
+
+  input[type="color"] {
+    @extend .button;
+
+    // height: $global-element-height;
+    padding: 0.2rem;
+    width: 100%;
+    outline: none;
+
+    &::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+    &::-webkit-color-swatch {
+      border: none;
+      border-radius: calc($global-border-radius / 2);
+    }
+  }
+
+  textarea {
+    height: auto;
+    min-height: $global-element-height * 3;
+    resize: vertical;
+  }
+
+  input[type="file"] {
+    border: none;
+    padding: 0;
+    height: auto;
+    font-size: 0.75rem;
+    width: 100%;
+    color: hsl(0, 0%, 40%);
+
+    &::file-selector-button {
+      @extend .button;
+      width: 100%;
+    }
+  }
+
+  input[type="range"] {
+    // TODO: Style range inputs
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    $checked-color: map-get($button-colors, "primary");
+
+    width: 0;
+    height: 0;
+
+    &::before {
+      content: "";
+
+      @extend .button;
+      @extend .square;
+    }
+
+    &:checked:hover::before {
+      box-shadow: 0 calc($button-3d-height / 2)
+        darken(darken(map-get($button-colors, "secondary"), 10%), 20%);
+    }
+
+    &:checked::before {
+      content: "✓";
+      top: calc($button-3d-height / 2);
+      background-color: $checked-color;
+      border-color: darken($checked-color, 15%);
+      box-shadow: 0 calc($button-3d-height / 2) darken($checked-color, 20%);
+      color: if(
+        lightness($checked-color) > 45%,
+        hsl(0, 0%, 0%, 0.7),
+        hsl(0, 0%, 100%, 0.8)
+      );
+    }
+
+    &:checked:hover::before {
+      box-shadow: 0 calc($button-3d-height / 2)
+        darken(darken($checked-color, 10%), 20%);
+      background-color: darken($checked-color, 10%);
+      border-color: darken(darken($checked-color, 10%), 15%);
+    }
+  }
+
+  select {
+    @extend input;
+    padding: 0.25rem;
+  }
+}

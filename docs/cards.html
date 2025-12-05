@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../toon.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Toon CSS</h1>
+    </header>
+    <nav>
+      <a href="./">Home</a>
+      <a href="./buttons.html">Buttons</a>
+      <a href="./cards.html">Cards</a>
+      <a href="./forms.html">Forms</a>
+      <a href="./grids.html">Grids</a>
+    </nav>
+    <main class="center">
+      <div class="card lg">
+        <h1>Card Examples</h1>
+        <p>
+          Toon CSS provides a versatile card component that can be used for
+          various purposes, such as notifications, modals, and content
+          containers. Below are some examples of different card styles and
+          usages.
+        </p>
+        <div class="card md">
+          <h1>Cookies</h1>
+          <p>Please accept cookies to continue using our website.</p>
+          <div class="buttons">
+            <button class="button secondary">Customize</button>
+            <button class="button success">Accept</button>
+          </div>
+          <div class="close">
+            <button class="button square danger">&times;</button>
+          </div>
+        </div>
+        <div class="card sm">
+          <h1 class="center">Confirm</h1>
+          <p>Are you sure you want to delete this item?</p>
+          <div class="buttons col">
+            <button class="button danger">Delete</button>
+            <button class="button secondary">Cancel</button>
+          </div>
+        </div>
+      </div>
+      <div class="card lg">
+        <h1>Usage</h1>
+        <h2>Basic Card</h2>
+        <p>
+          To create a card, simply add the <code>card</code> class to a
+          container element. You can also add size classes like
+          <code>md</code> to adjust the card's width.
+        </p>
+        <p>
+          Supported sizes: <code>xxs</code>, <code>xs</code>, <code>sm</code>,
+          <code>md</code>, <code>lg</code>, <code>xl</code> and
+          <code>xxl</code>.
+        </p>
+        <h2>Card Title</h2>
+        <p>
+          Use a <code>h1</code> for the card title, and regular text elements
+          for the content. <code>h2</code> can be used for subheadings.
+        </p>
+        <p>
+          To create a card without a title, simply omit the
+          <code>h1</code> element and add the <code>no-title</code> class to the
+          <code>card</code> element. This will adjust the padding and margin to
+          ensure proper spacing.
+        </p>
+        <code>
+          &lt;div class="card md"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Card Title&lt;/h1&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;This is an example of a basic
+          card.&lt;/p&gt;<br />
+          &lt;/div&gt;
+        </code>
+        <section class="example">
+          <div class="card md">
+            <h1>Card Title</h1>
+            <p>This is an example of a basic card.</p>
+          </div>
+        </section>
+        <h2>Card with Buttons</h2>
+        <p>
+          You can include buttons inside a card by adding a container with the
+          <code>buttons</code> class. This will properly space and align the
+          buttons within the card.
+        </p>
+        <code>
+          &lt;div class="card md"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Card with Buttons&lt;/h1&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;This card contains
+          buttons.&lt;/p&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="buttons"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
+          class="button primary"&gt;OK&lt;/button&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
+          class="button secondary"&gt;Cancel&lt;/button&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+          &lt;/div&gt;
+        </code>
+        <section class="example">
+          <div class="card md">
+            <h1>Card with Buttons</h1>
+            <p>This card contains buttons.</p>
+            <div class="buttons">
+              <button class="button secondary">OK</button>
+              <button class="button success">Cool!</button>
+            </div>
+          </div>
+        </section>
+        <h2>Card with Close Button</h2>
+        <p>
+          To add a close button to a card, include a container with the
+          <code>close</code> class. This will position the container in the
+          top-right corner of the card.
+        </p>
+        <p>
+          You can add any button style inside the close container, but it's
+          common to use a square button with a close icon (&times;).
+        </p>
+        <code>
+          &lt;div class="card md"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Card with Close Button&lt;/h1&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;This card has a close
+          button.&lt;/p&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="close"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
+          class="button square danger"&gt;&amp;times;&lt;/button&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+          &lt;/div&gt;
+        </code>
+        <section class="example">
+          <div class="card md">
+            <h1>Close Button</h1>
+            <p>This card has a close button.</p>
+            <div class="close">
+              <button class="button square danger">&times;</button>
+            </div>
+          </div>
+        </section>
+        <h2>Title Alignment</h2>
+        <p>
+          By default, card titles are left-aligned. To center the title, add the
+          <code>center</code> class to the <code>h1</code> element. To
+          right-align the title, use the <code>right</code> class.
+        </p>
+        <code>
+          &lt;div class="card md"&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1
+          class="center"&gt;Centered&lt;/h1&gt;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;The title of this card is
+          centered.&lt;/p&gt;<br />
+          &lt;/div&gt;
+        </code>
+        <section class="example">
+          <div class="card md">
+            <h1 class="center">Centered</h1>
+            <p>The title of this card is centered.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2025 luximus-hunter. MIT licensed. Made with &#x2764;</p>
+    </footer>
+  </body>
+</html>

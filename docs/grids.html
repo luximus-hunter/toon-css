@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../toon.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Toon CSS</h1>
+    </header>
+    <nav>
+      <a href="./">Home</a>
+      <a href="./buttons.html">Buttons</a>
+      <a href="./cards.html">Cards</a>
+      <a href="./forms.html">Forms</a>
+      <a href="./grids.html">Grids</a>
+    </nav>
+    <main class="center">
+      <div class="card lg">
+        <h1>Grid Examples</h1>
+        <p>
+          Toon CSS includes a flexible grid system that allows you to create
+          responsive layouts with ease. Below are some examples of different
+          grid configurations.
+        </p>
+        <h2>2-Column Grid</h2>
+        <div class="grid cols-2 gap-md">
+          <div class="card sm no-title">
+            <h2>Column 1</h2>
+            <p>This is the first column in a 2-column grid.</p>
+          </div>
+          <div class="card sm no-title">
+            <h2>Column 2</h2>
+            <p>This is the second column in a 2-column grid.</p>
+          </div>
+        </div>
+        <h2>3-Column Grid</h2>
+        <div class="grid cols-3 gap-md">
+          <div class="card sm no-title">
+            <h2>Column 1</h2>
+            <p>This is the first column in a 3-column grid.</p>
+          </div>
+          <div class="card sm no-title">
+            <h2>Column 2</h2>
+            <p>This is the second column in a 3-column grid.</p>
+          </div>
+          <div class="card sm no-title">
+            <h2>Column 3</h2>
+            <p>This is the third column in a 3-column grid.</p>
+          </div>
+          <div class="card sm no-title">
+            <h2>Column 4</h2>
+            <p>This is the fourth column in a 3-column grid.</p>
+          </div>
+          <div class="card sm no-title">
+            <h2>Column 5</h2>
+            <p>This is the fifth column in a 3-column grid.</p>
+          </div>
+          <div class="card sm no-title">
+            <h2>Column 6</h2>
+            <p>This is the sixth column in a 3-column grid.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card lg">
+        <h1>Usage</h1>
+        <h2>Creating a Grid</h2>
+        <p>
+          To create a grid, use the <code>grid</code> class on a container
+          element. You can specify the number of columns using classes like
+          <code>cols-1</code>, <code>cols-2</code>, <code>cols-3</code>, etc.
+          all the way up to <code>cols-12</code>.
+        </p>
+        <code>
+          &lt;div class="grid cols-3 gap-md"&gt;<br />
+          &nbsp;&nbsp;&lt;div class="card sm no-title"&gt;...&lt;/div&gt;<br />
+          &nbsp;&nbsp;&lt;div class="card sm no-title"&gt;...&lt;/div&gt;<br />
+          &nbsp;&nbsp;&lt;div class="card sm no-title"&gt;...&lt;/div&gt;<br />
+          &lt;/div&gt;
+        </code>
+        <section class="example">
+          <div class="grid cols-3 gap-md">
+            <div class="card sm no-title">
+              <h2>Column 1</h2>
+              <p>This is the first column in a 3-column grid.</p>
+            </div>
+            <div class="card sm no-title">
+              <h2>Column 2</h2>
+              <p>This is the second column in a 3-column grid.</p>
+            </div>
+            <div class="card sm no-title">
+              <h2>Column 3</h2>
+              <p>This is the third column in a 3-column grid.</p>
+            </div>
+          </div>
+        </section>
+        <h2>Automatic Columns</h2>
+        <p>
+          If you want the grid to automatically adjust the number of columns
+          based on the available space, you can use <code>auto-sm</code> up to
+          <code>auto-lg</code>. This will create a responsive grid that adapts
+          to different screen sizes.
+        </p>
+        <code>
+          &lt;div class="grid auto-sm gap-md"&gt;<br />
+          &nbsp;&nbsp;&lt;div class="card sm no-title"&gt;...&lt;/div&gt;<br />
+          &nbsp;&nbsp;&lt;div class="card sm no-title"&gt;...&lt;/div&gt;<br />
+          &nbsp;&nbsp;&lt;div class="card sm no-title"&gt;...&lt;/div&gt;<br />
+          &nbsp;&nbsp;&lt;div class="card sm no-title"&gt;...&lt;/div&gt;<br />
+          &nbsp;&nbsp;&lt;div class="card sm no-title"&gt;...&lt;/div&gt;<br />
+          &lt;/div&gt;
+        </code>
+        <section class="example">
+          <div class="grid auto-sm">
+            <div class="card sm no-title">
+              <h2>Column 1</h2>
+              <p>This is the first column in an auto-column grid.</p>
+            </div>
+            <div class="card sm no-title">
+              <h2>Column 2</h2>
+              <p>This is the second column in an auto-column grid.</p>
+            </div>
+            <div class="card sm no-title">
+              <h2>Column 3</h2>
+              <p>This is the third column in an auto-column grid.</p>
+            </div>
+            <div class="card sm no-title">
+              <h2>Column 4</h2>
+              <p>This is the fourth column in an auto-column grid.</p>
+            </div>
+            <div class="card sm no-title">
+              <h2>Column 5</h2>
+              <p>This is the fifth column in an auto-column grid.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2025 luximus-hunter. MIT licensed. Made with &#x2764;</p>
+    </footer>
+  </body>
+</html>

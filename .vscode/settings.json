@@ -1,0 +1,3 @@
+{
+  "liveSassCompile.settings.includeItems": ["**/toon.scss", "**/styles.scss"],
+}

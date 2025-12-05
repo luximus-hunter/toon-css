@@ -1,0 +1,68 @@
+$global-element-height: 2.5rem;
+$global-border-width: 0.2rem;
+$global-border-radius: 0.5rem;
+$global-animation-duration: 0.1s;
+$global-shadow: 0 0 0.5rem hsl(210, 10%, 70%, 0.3);
+
+.buttons-container {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  max-width: 600px;
+}
+
+code {
+  background-color: hsl(0, 0%, 85%);
+  color: hsl(0, 0%, 20%);
+  padding: 1rem;
+  border-radius: 0.4rem;
+}
+
+p > code {
+  padding: 0.2rem 0.4rem;
+}
+
+.example {
+  // Layout
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 4rem;
+  margin: 2rem 0 0 0;
+
+  // Positioning
+  position: relative;
+
+  // Border
+  border-width: $global-border-width;
+  border-style: solid;
+  border-radius: $global-border-radius;
+  border-color: hsl(210, 10%, 80%);
+
+  // Background
+  background-color: hsl(0, 0%, 95%);
+
+  // Shadow
+  box-shadow: $global-shadow;
+
+  &::before {
+    content: "Example";
+    user-select: none;
+    padding: 0.25rem 0.5rem;
+    border-width: $global-border-width;
+    border-style: solid;
+    border-radius: $global-border-radius;
+    border-color: hsl(210, 10%, 80%);
+    margin: 0;
+    position: absolute;
+    font-size: 0.75rem;
+    background-color: hsl(210, 17%, 98%);
+
+    top: -1rem - calc($global-border-width / 2);
+    left: 1rem;
+  }
+}

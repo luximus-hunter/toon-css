@@ -1,0 +1,961 @@
+@charset "UTF-8";
+/* Toon CSS */
+/* MIT Licensed 2025 luximus-hunter */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+a {
+  text-decoration: underline;
+  color: inherit;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+}
+a:hover {
+  background-color: hsla(0, 0%, 100%, 0.25);
+}
+
+.grid {
+  display: grid;
+  gap: 0.5rem;
+}
+.grid.cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+.grid.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid.cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid.cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid.cols-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+.grid.cols-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+.grid.cols-7 {
+  grid-template-columns: repeat(7, 1fr);
+}
+.grid.cols-8 {
+  grid-template-columns: repeat(8, 1fr);
+}
+.grid.cols-9 {
+  grid-template-columns: repeat(9, 1fr);
+}
+.grid.cols-10 {
+  grid-template-columns: repeat(10, 1fr);
+}
+.grid.cols-11 {
+  grid-template-columns: repeat(11, 1fr);
+}
+.grid.cols-12 {
+  grid-template-columns: repeat(12, 1fr);
+}
+.grid.auto-sm {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+.grid.auto-md {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.grid.auto-lg {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.grid.auto-xl {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+body {
+  padding: 0rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: hsl(0, 0%, 90%);
+  color: hsl(0, 0%, 20%);
+}
+body > header {
+  background-color: hsl(211, 100%, 50%);
+  color: hsla(0, 0%, 0%, 0.7);
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 2rem;
+  border-bottom: 0.3rem solid hsl(211, 100%, 40%);
+  align-items: center;
+  justify-content: space-between;
+}
+body > header > nav {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+}
+body nav {
+  background-color: hsl(210, 17%, 85%);
+  color: hsla(0, 0%, 0%, 0.7);
+  padding: 0.5rem 1.5rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  border-bottom: 0.2rem solid hsl(210, 17%, 75%);
+  box-shadow: 0 0.5rem 0.5rem hsla(210, 10%, 70%, 0.3);
+}
+body nav a {
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+body > main {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+body > main.center {
+  align-items: center;
+}
+body > footer {
+  background-color: hsl(210, 10%, 20%);
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  padding: 1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.button, form input[type=checkbox]::before, form select[type=checkbox]::before,
+form input[type=radio]::before,
+form select[type=radio]::before, form input[type=file]::file-selector-button, form select[type=file]::file-selector-button, form input[type=color], form select[type=color] {
+  display: flex;
+  height: 2rem;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  padding: 0 1rem;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  position: relative;
+  top: 0;
+  border-width: 0.2rem;
+  border-style: solid;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  box-shadow: 0 0.5rem;
+  cursor: pointer;
+  outline: none;
+  transition: top 0.1s ease-in-out, background-color 0.1s ease-in-out, border-color 0.1s ease-in-out, color 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+  background-color: hsl(210, 17%, 85%);
+  border-color: hsl(210, 17%, 80%);
+  color: hsla(0, 0%, 0%, 0.7);
+  box-shadow: 0 0.5rem hsl(210, 17%, 70%);
+}
+.button.square, form input[type=checkbox]::before, form select[type=checkbox]::before,
+form input[type=radio]::before,
+form select[type=radio]::before, form input.square[type=file]::file-selector-button, form select.square[type=file]::file-selector-button, form input.square[type=color], form select.square[type=color] {
+  width: 2rem;
+  padding: 0;
+}
+.button:active:not(:disabled), form input[type=checkbox]:active:not(:disabled)::before, form select[type=checkbox]:active:not(:disabled)::before,
+form input[type=radio]:active:not(:disabled)::before,
+form select[type=radio]:active:not(:disabled)::before, form input[type=file]:active:not(:disabled)::file-selector-button, form select[type=file]:active:not(:disabled)::file-selector-button, form input[type=color]:active:not(:disabled), form select[type=color]:active:not(:disabled) {
+  top: 0.25rem;
+  box-shadow: 0 0.25rem;
+}
+.button:disabled, form input[type=checkbox]:disabled::before, form select[type=checkbox]:disabled::before,
+form input[type=radio]:disabled::before,
+form select[type=radio]:disabled::before, form input[type=file]:disabled::file-selector-button, form select[type=file]:disabled::file-selector-button, form input[type=color]:disabled, form select[type=color]:disabled {
+  cursor: not-allowed;
+  box-shadow: none !important;
+  top: 0.25rem;
+}
+.button:hover:not(:disabled), form input[type=checkbox]:hover:not(:disabled)::before, form select[type=checkbox]:hover:not(:disabled)::before,
+form input[type=radio]:hover:not(:disabled)::before,
+form select[type=radio]:hover:not(:disabled)::before, form input[type=file]:hover:not(:disabled)::file-selector-button, form select[type=file]:hover:not(:disabled)::file-selector-button, form input[type=color]:hover:not(:disabled), form select[type=color]:hover:not(:disabled) {
+  background-color: hsl(210, 17%, 80%);
+  border-color: hsl(210, 17%, 75%);
+  box-shadow: 0 0.5rem hsl(210, 17%, 65%);
+}
+.button:active:not(:disabled), form input[type=checkbox]:active:not(:disabled)::before, form select[type=checkbox]:active:not(:disabled)::before,
+form input[type=radio]:active:not(:disabled)::before,
+form select[type=radio]:active:not(:disabled)::before, form input[type=file]:active:not(:disabled)::file-selector-button, form select[type=file]:active:not(:disabled)::file-selector-button, form input[type=color]:active:not(:disabled), form select[type=color]:active:not(:disabled) {
+  background-color: hsl(210, 17%, 75%);
+  border-color: hsl(210, 17%, 65%);
+  box-shadow: 0 0.25rem hsl(210, 17%, 60%);
+}
+.button:disabled, form input[type=checkbox]:disabled::before, form select[type=checkbox]:disabled::before,
+form input[type=radio]:disabled::before,
+form select[type=radio]:disabled::before, form input[type=file]:disabled::file-selector-button, form select[type=file]:disabled::file-selector-button, form input[type=color]:disabled, form select[type=color]:disabled {
+  background-color: hsl(210, 17%, 100%);
+  border-color: hsl(210, 17%, 100%);
+  color: hsla(0, 0%, 40%, 0.7);
+}
+.button.primary, form input.primary[type=checkbox]::before, form select.primary[type=checkbox]::before,
+form input.primary[type=radio]::before,
+form select.primary[type=radio]::before, form input.primary[type=file]::file-selector-button, form select.primary[type=file]::file-selector-button, form input.primary[type=color], form select.primary[type=color] {
+  background-color: hsl(211, 100%, 50%);
+  border-color: hsl(211, 100%, 45%);
+  color: hsla(0, 0%, 0%, 0.7);
+  box-shadow: 0 0.5rem hsl(211, 100%, 35%);
+}
+.button.primary:hover:not(:disabled), form input.primary[type=checkbox]:hover:not(:disabled)::before, form select.primary[type=checkbox]:hover:not(:disabled)::before,
+form input.primary[type=radio]:hover:not(:disabled)::before,
+form select.primary[type=radio]:hover:not(:disabled)::before, form input.primary[type=file]:hover:not(:disabled)::file-selector-button, form select.primary[type=file]:hover:not(:disabled)::file-selector-button, form input.primary[type=color]:hover:not(:disabled), form select.primary[type=color]:hover:not(:disabled) {
+  background-color: hsl(211, 100%, 40%);
+  border-color: hsl(211, 100%, 35%);
+  box-shadow: 0 0.5rem hsl(211, 100%, 25%);
+}
+.button.primary:active:not(:disabled), form input.primary[type=checkbox]:active:not(:disabled)::before, form select.primary[type=checkbox]:active:not(:disabled)::before,
+form input.primary[type=radio]:active:not(:disabled)::before,
+form select.primary[type=radio]:active:not(:disabled)::before, form input.primary[type=file]:active:not(:disabled)::file-selector-button, form select.primary[type=file]:active:not(:disabled)::file-selector-button, form input.primary[type=color]:active:not(:disabled), form select.primary[type=color]:active:not(:disabled) {
+  background-color: hsl(211, 100%, 35%);
+  border-color: hsl(211, 100%, 25%);
+  box-shadow: 0 0.25rem hsl(211, 100%, 20%);
+}
+.button.primary:disabled, form input.primary[type=checkbox]:disabled::before, form select.primary[type=checkbox]:disabled::before,
+form input.primary[type=radio]:disabled::before,
+form select.primary[type=radio]:disabled::before, form input.primary[type=file]:disabled::file-selector-button, form select.primary[type=file]:disabled::file-selector-button, form input.primary[type=color]:disabled, form select.primary[type=color]:disabled {
+  background-color: hsl(211, 100%, 80%);
+  border-color: hsl(211, 100%, 70%);
+  color: hsla(0, 0%, 40%, 0.7);
+}
+.button.secondary, form input.secondary[type=checkbox]::before, form select.secondary[type=checkbox]::before,
+form input.secondary[type=radio]::before,
+form select.secondary[type=radio]::before, form input.secondary[type=file]::file-selector-button, form select.secondary[type=file]::file-selector-button, form input.secondary[type=color], form select.secondary[type=color] {
+  background-color: hsl(210, 17%, 85%);
+  border-color: hsl(210, 17%, 80%);
+  color: hsla(0, 0%, 0%, 0.7);
+  box-shadow: 0 0.5rem hsl(210, 17%, 70%);
+}
+.button.secondary:hover:not(:disabled), form input.secondary[type=checkbox]:hover:not(:disabled)::before, form select.secondary[type=checkbox]:hover:not(:disabled)::before,
+form input.secondary[type=radio]:hover:not(:disabled)::before,
+form select.secondary[type=radio]:hover:not(:disabled)::before, form input.secondary[type=file]:hover:not(:disabled)::file-selector-button, form select.secondary[type=file]:hover:not(:disabled)::file-selector-button, form input.secondary[type=color]:hover:not(:disabled), form select.secondary[type=color]:hover:not(:disabled) {
+  background-color: hsl(210, 17%, 75%);
+  border-color: hsl(210, 17%, 70%);
+  box-shadow: 0 0.5rem hsl(210, 17%, 60%);
+}
+.button.secondary:active:not(:disabled), form input.secondary[type=checkbox]:active:not(:disabled)::before, form select.secondary[type=checkbox]:active:not(:disabled)::before,
+form input.secondary[type=radio]:active:not(:disabled)::before,
+form select.secondary[type=radio]:active:not(:disabled)::before, form input.secondary[type=file]:active:not(:disabled)::file-selector-button, form select.secondary[type=file]:active:not(:disabled)::file-selector-button, form input.secondary[type=color]:active:not(:disabled), form select.secondary[type=color]:active:not(:disabled) {
+  background-color: hsl(210, 17%, 70%);
+  border-color: hsl(210, 17%, 60%);
+  box-shadow: 0 0.25rem hsl(210, 17%, 55%);
+}
+.button.secondary:disabled, form input.secondary[type=checkbox]:disabled::before, form select.secondary[type=checkbox]:disabled::before,
+form input.secondary[type=radio]:disabled::before,
+form select.secondary[type=radio]:disabled::before, form input.secondary[type=file]:disabled::file-selector-button, form select.secondary[type=file]:disabled::file-selector-button, form input.secondary[type=color]:disabled, form select.secondary[type=color]:disabled {
+  background-color: hsl(210, 17%, 100%);
+  border-color: hsl(210, 17%, 100%);
+  color: hsla(0, 0%, 40%, 0.7);
+}
+.button.success, form input.success[type=checkbox]::before, form select.success[type=checkbox]::before,
+form input.success[type=radio]::before,
+form select.success[type=radio]::before, form input.success[type=file]::file-selector-button, form select.success[type=file]::file-selector-button, form input.success[type=color], form select.success[type=color] {
+  background-color: hsl(134, 61%, 50%);
+  border-color: hsl(134, 61%, 45%);
+  color: hsla(0, 0%, 0%, 0.7);
+  box-shadow: 0 0.5rem hsl(134, 61%, 35%);
+}
+.button.success:hover:not(:disabled), form input.success[type=checkbox]:hover:not(:disabled)::before, form select.success[type=checkbox]:hover:not(:disabled)::before,
+form input.success[type=radio]:hover:not(:disabled)::before,
+form select.success[type=radio]:hover:not(:disabled)::before, form input.success[type=file]:hover:not(:disabled)::file-selector-button, form select.success[type=file]:hover:not(:disabled)::file-selector-button, form input.success[type=color]:hover:not(:disabled), form select.success[type=color]:hover:not(:disabled) {
+  background-color: hsl(134, 61%, 40%);
+  border-color: hsl(134, 61%, 35%);
+  box-shadow: 0 0.5rem hsl(134, 61%, 25%);
+}
+.button.success:active:not(:disabled), form input.success[type=checkbox]:active:not(:disabled)::before, form select.success[type=checkbox]:active:not(:disabled)::before,
+form input.success[type=radio]:active:not(:disabled)::before,
+form select.success[type=radio]:active:not(:disabled)::before, form input.success[type=file]:active:not(:disabled)::file-selector-button, form select.success[type=file]:active:not(:disabled)::file-selector-button, form input.success[type=color]:active:not(:disabled), form select.success[type=color]:active:not(:disabled) {
+  background-color: hsl(134, 61%, 35%);
+  border-color: hsl(134, 61%, 25%);
+  box-shadow: 0 0.25rem hsl(134, 61%, 20%);
+}
+.button.success:disabled, form input.success[type=checkbox]:disabled::before, form select.success[type=checkbox]:disabled::before,
+form input.success[type=radio]:disabled::before,
+form select.success[type=radio]:disabled::before, form input.success[type=file]:disabled::file-selector-button, form select.success[type=file]:disabled::file-selector-button, form input.success[type=color]:disabled, form select.success[type=color]:disabled {
+  background-color: hsl(134, 61%, 80%);
+  border-color: hsl(134, 61%, 70%);
+  color: hsla(0, 0%, 40%, 0.7);
+}
+.button.danger, form input.danger[type=checkbox]::before, form select.danger[type=checkbox]::before,
+form input.danger[type=radio]::before,
+form select.danger[type=radio]::before, form input.danger[type=file]::file-selector-button, form select.danger[type=file]::file-selector-button, form input.danger[type=color], form select.danger[type=color] {
+  background-color: hsl(354, 70%, 50%);
+  border-color: hsl(354, 70%, 45%);
+  color: hsla(0, 0%, 0%, 0.7);
+  box-shadow: 0 0.5rem hsl(354, 70%, 35%);
+}
+.button.danger:hover:not(:disabled), form input.danger[type=checkbox]:hover:not(:disabled)::before, form select.danger[type=checkbox]:hover:not(:disabled)::before,
+form input.danger[type=radio]:hover:not(:disabled)::before,
+form select.danger[type=radio]:hover:not(:disabled)::before, form input.danger[type=file]:hover:not(:disabled)::file-selector-button, form select.danger[type=file]:hover:not(:disabled)::file-selector-button, form input.danger[type=color]:hover:not(:disabled), form select.danger[type=color]:hover:not(:disabled) {
+  background-color: hsl(354, 70%, 40%);
+  border-color: hsl(354, 70%, 35%);
+  box-shadow: 0 0.5rem hsl(354, 70%, 25%);
+}
+.button.danger:active:not(:disabled), form input.danger[type=checkbox]:active:not(:disabled)::before, form select.danger[type=checkbox]:active:not(:disabled)::before,
+form input.danger[type=radio]:active:not(:disabled)::before,
+form select.danger[type=radio]:active:not(:disabled)::before, form input.danger[type=file]:active:not(:disabled)::file-selector-button, form select.danger[type=file]:active:not(:disabled)::file-selector-button, form input.danger[type=color]:active:not(:disabled), form select.danger[type=color]:active:not(:disabled) {
+  background-color: hsl(354, 70%, 35%);
+  border-color: hsl(354, 70%, 25%);
+  box-shadow: 0 0.25rem hsl(354, 70%, 20%);
+}
+.button.danger:disabled, form input.danger[type=checkbox]:disabled::before, form select.danger[type=checkbox]:disabled::before,
+form input.danger[type=radio]:disabled::before,
+form select.danger[type=radio]:disabled::before, form input.danger[type=file]:disabled::file-selector-button, form select.danger[type=file]:disabled::file-selector-button, form input.danger[type=color]:disabled, form select.danger[type=color]:disabled {
+  background-color: hsl(354, 70%, 80%);
+  border-color: hsl(354, 70%, 70%);
+  color: hsla(0, 0%, 40%, 0.7);
+}
+.button.warning, form input.warning[type=checkbox]::before, form select.warning[type=checkbox]::before,
+form input.warning[type=radio]::before,
+form select.warning[type=radio]::before, form input.warning[type=file]::file-selector-button, form select.warning[type=file]::file-selector-button, form input.warning[type=color], form select.warning[type=color] {
+  background-color: hsl(45, 100%, 50%);
+  border-color: hsl(45, 100%, 45%);
+  color: hsla(0, 0%, 0%, 0.7);
+  box-shadow: 0 0.5rem hsl(45, 100%, 35%);
+}
+.button.warning:hover:not(:disabled), form input.warning[type=checkbox]:hover:not(:disabled)::before, form select.warning[type=checkbox]:hover:not(:disabled)::before,
+form input.warning[type=radio]:hover:not(:disabled)::before,
+form select.warning[type=radio]:hover:not(:disabled)::before, form input.warning[type=file]:hover:not(:disabled)::file-selector-button, form select.warning[type=file]:hover:not(:disabled)::file-selector-button, form input.warning[type=color]:hover:not(:disabled), form select.warning[type=color]:hover:not(:disabled) {
+  background-color: hsl(45, 100%, 40%);
+  border-color: hsl(45, 100%, 35%);
+  box-shadow: 0 0.5rem hsl(45, 100%, 25%);
+}
+.button.warning:active:not(:disabled), form input.warning[type=checkbox]:active:not(:disabled)::before, form select.warning[type=checkbox]:active:not(:disabled)::before,
+form input.warning[type=radio]:active:not(:disabled)::before,
+form select.warning[type=radio]:active:not(:disabled)::before, form input.warning[type=file]:active:not(:disabled)::file-selector-button, form select.warning[type=file]:active:not(:disabled)::file-selector-button, form input.warning[type=color]:active:not(:disabled), form select.warning[type=color]:active:not(:disabled) {
+  background-color: hsl(45, 100%, 35%);
+  border-color: hsl(45, 100%, 25%);
+  box-shadow: 0 0.25rem hsl(45, 100%, 20%);
+}
+.button.warning:disabled, form input.warning[type=checkbox]:disabled::before, form select.warning[type=checkbox]:disabled::before,
+form input.warning[type=radio]:disabled::before,
+form select.warning[type=radio]:disabled::before, form input.warning[type=file]:disabled::file-selector-button, form select.warning[type=file]:disabled::file-selector-button, form input.warning[type=color]:disabled, form select.warning[type=color]:disabled {
+  background-color: hsl(45, 100%, 80%);
+  border-color: hsl(45, 100%, 70%);
+  color: hsla(0, 0%, 40%, 0.7);
+}
+.button.info, form input.info[type=checkbox]::before, form select.info[type=checkbox]::before,
+form input.info[type=radio]::before,
+form select.info[type=radio]::before, form input.info[type=file]::file-selector-button, form select.info[type=file]::file-selector-button, form input.info[type=color], form select.info[type=color] {
+  background-color: hsl(188, 78%, 50%);
+  border-color: hsl(188, 78%, 45%);
+  color: hsla(0, 0%, 0%, 0.7);
+  box-shadow: 0 0.5rem hsl(188, 78%, 35%);
+}
+.button.info:hover:not(:disabled), form input.info[type=checkbox]:hover:not(:disabled)::before, form select.info[type=checkbox]:hover:not(:disabled)::before,
+form input.info[type=radio]:hover:not(:disabled)::before,
+form select.info[type=radio]:hover:not(:disabled)::before, form input.info[type=file]:hover:not(:disabled)::file-selector-button, form select.info[type=file]:hover:not(:disabled)::file-selector-button, form input.info[type=color]:hover:not(:disabled), form select.info[type=color]:hover:not(:disabled) {
+  background-color: hsl(188, 78%, 40%);
+  border-color: hsl(188, 78%, 35%);
+  box-shadow: 0 0.5rem hsl(188, 78%, 25%);
+}
+.button.info:active:not(:disabled), form input.info[type=checkbox]:active:not(:disabled)::before, form select.info[type=checkbox]:active:not(:disabled)::before,
+form input.info[type=radio]:active:not(:disabled)::before,
+form select.info[type=radio]:active:not(:disabled)::before, form input.info[type=file]:active:not(:disabled)::file-selector-button, form select.info[type=file]:active:not(:disabled)::file-selector-button, form input.info[type=color]:active:not(:disabled), form select.info[type=color]:active:not(:disabled) {
+  background-color: hsl(188, 78%, 35%);
+  border-color: hsl(188, 78%, 25%);
+  box-shadow: 0 0.25rem hsl(188, 78%, 20%);
+}
+.button.info:disabled, form input.info[type=checkbox]:disabled::before, form select.info[type=checkbox]:disabled::before,
+form input.info[type=radio]:disabled::before,
+form select.info[type=radio]:disabled::before, form input.info[type=file]:disabled::file-selector-button, form select.info[type=file]:disabled::file-selector-button, form input.info[type=color]:disabled, form select.info[type=color]:disabled {
+  background-color: hsl(188, 78%, 80%);
+  border-color: hsl(188, 78%, 70%);
+  color: hsla(0, 0%, 40%, 0.7);
+}
+.button.light, form input.light[type=checkbox]::before, form select.light[type=checkbox]::before,
+form input.light[type=radio]::before,
+form select.light[type=radio]::before, form input.light[type=file]::file-selector-button, form select.light[type=file]::file-selector-button, form input.light[type=color], form select.light[type=color] {
+  background-color: hsl(0, 0%, 90%);
+  border-color: hsl(0, 0%, 85%);
+  color: hsla(0, 0%, 0%, 0.7);
+  box-shadow: 0 0.5rem hsl(0, 0%, 75%);
+}
+.button.light:hover:not(:disabled), form input.light[type=checkbox]:hover:not(:disabled)::before, form select.light[type=checkbox]:hover:not(:disabled)::before,
+form input.light[type=radio]:hover:not(:disabled)::before,
+form select.light[type=radio]:hover:not(:disabled)::before, form input.light[type=file]:hover:not(:disabled)::file-selector-button, form select.light[type=file]:hover:not(:disabled)::file-selector-button, form input.light[type=color]:hover:not(:disabled), form select.light[type=color]:hover:not(:disabled) {
+  background-color: hsl(0, 0%, 80%);
+  border-color: hsl(0, 0%, 75%);
+  box-shadow: 0 0.5rem hsl(0, 0%, 65%);
+}
+.button.light:active:not(:disabled), form input.light[type=checkbox]:active:not(:disabled)::before, form select.light[type=checkbox]:active:not(:disabled)::before,
+form input.light[type=radio]:active:not(:disabled)::before,
+form select.light[type=radio]:active:not(:disabled)::before, form input.light[type=file]:active:not(:disabled)::file-selector-button, form select.light[type=file]:active:not(:disabled)::file-selector-button, form input.light[type=color]:active:not(:disabled), form select.light[type=color]:active:not(:disabled) {
+  background-color: hsl(0, 0%, 75%);
+  border-color: hsl(0, 0%, 65%);
+  box-shadow: 0 0.25rem hsl(0, 0%, 60%);
+}
+.button.light:disabled, form input.light[type=checkbox]:disabled::before, form select.light[type=checkbox]:disabled::before,
+form input.light[type=radio]:disabled::before,
+form select.light[type=radio]:disabled::before, form input.light[type=file]:disabled::file-selector-button, form select.light[type=file]:disabled::file-selector-button, form input.light[type=color]:disabled, form select.light[type=color]:disabled {
+  background-color: hsl(0, 0%, 100%);
+  border-color: hsl(0, 0%, 100%);
+  color: hsla(0, 0%, 40%, 0.7);
+}
+.button.dark, form input.dark[type=checkbox]::before, form select.dark[type=checkbox]::before,
+form input.dark[type=radio]::before,
+form select.dark[type=radio]::before, form input.dark[type=file]::file-selector-button, form select.dark[type=file]::file-selector-button, form input.dark[type=color], form select.dark[type=color] {
+  background-color: hsl(0, 0%, 30%);
+  border-color: hsl(0, 0%, 25%);
+  color: hsla(0, 0%, 100%, 0.8);
+  box-shadow: 0 0.5rem hsl(0, 0%, 15%);
+}
+.button.dark:hover:not(:disabled), form input.dark[type=checkbox]:hover:not(:disabled)::before, form select.dark[type=checkbox]:hover:not(:disabled)::before,
+form input.dark[type=radio]:hover:not(:disabled)::before,
+form select.dark[type=radio]:hover:not(:disabled)::before, form input.dark[type=file]:hover:not(:disabled)::file-selector-button, form select.dark[type=file]:hover:not(:disabled)::file-selector-button, form input.dark[type=color]:hover:not(:disabled), form select.dark[type=color]:hover:not(:disabled) {
+  background-color: hsl(0, 0%, 20%);
+  border-color: hsl(0, 0%, 15%);
+  box-shadow: 0 0.5rem hsl(0, 0%, 5%);
+}
+.button.dark:active:not(:disabled), form input.dark[type=checkbox]:active:not(:disabled)::before, form select.dark[type=checkbox]:active:not(:disabled)::before,
+form input.dark[type=radio]:active:not(:disabled)::before,
+form select.dark[type=radio]:active:not(:disabled)::before, form input.dark[type=file]:active:not(:disabled)::file-selector-button, form select.dark[type=file]:active:not(:disabled)::file-selector-button, form input.dark[type=color]:active:not(:disabled), form select.dark[type=color]:active:not(:disabled) {
+  background-color: hsl(0, 0%, 15%);
+  border-color: hsl(0, 0%, 5%);
+  box-shadow: 0 0.25rem hsl(0, 0%, 0%);
+}
+.button.dark:disabled, form input.dark[type=checkbox]:disabled::before, form select.dark[type=checkbox]:disabled::before,
+form input.dark[type=radio]:disabled::before,
+form select.dark[type=radio]:disabled::before, form input.dark[type=file]:disabled::file-selector-button, form select.dark[type=file]:disabled::file-selector-button, form input.dark[type=color]:disabled, form select.dark[type=color]:disabled {
+  background-color: hsl(0, 0%, 60%);
+  border-color: hsl(0, 0%, 50%);
+  color: hsla(0, 0%, 100%, 0.8);
+}
+.button.red, form input.red[type=checkbox]::before, form select.red[type=checkbox]::before,
+form input.red[type=radio]::before,
+form select.red[type=radio]::before, form input.red[type=file]::file-selector-button, form select.red[type=file]::file-selector-button, form input.red[type=color], form select.red[type=color] {
+  background-color: hsl(0, 100%, 50%);
+  border-color: hsl(0, 100%, 45%);
+  color: hsla(0, 0%, 0%, 0.7);
+  box-shadow: 0 0.5rem hsl(0, 100%, 35%);
+}
+.button.red:hover:not(:disabled), form input.red[type=checkbox]:hover:not(:disabled)::before, form select.red[type=checkbox]:hover:not(:disabled)::before,
+form input.red[type=radio]:hover:not(:disabled)::before,
+form select.red[type=radio]:hover:not(:disabled)::before, form input.red[type=file]:hover:not(:disabled)::file-selector-button, form select.red[type=file]:hover:not(:disabled)::file-selector-button, form input.red[type=color]:hover:not(:disabled), form select.red[type=color]:hover:not(:disabled) {
+  background-color: hsl(0, 100%, 40%);
+  border-color: hsl(0, 100%, 35%);
+  box-shadow: 0 0.5rem hsl(0, 100%, 25%);
+}
+.button.red:active:not(:disabled), form input.red[type=checkbox]:active:not(:disabled)::before, form select.red[type=checkbox]:active:not(:disabled)::before,
+form input.red[type=radio]:active:not(:disabled)::before,
+form select.red[type=radio]:active:not(:disabled)::before, form input.red[type=file]:active:not(:disabled)::file-selector-button, form select.red[type=file]:active:not(:disabled)::file-selector-button, form input.red[type=color]:active:not(:disabled), form select.red[type=color]:active:not(:disabled) {
+  background-color: hsl(0, 100%, 35%);
+  border-color: hsl(0, 100%, 25%);
+  box-shadow: 0 0.25rem hsl(0, 100%, 20%);
+}
+.button.red:disabled, form input.red[type=checkbox]:disabled::before, form select.red[type=checkbox]:disabled::before,
+form input.red[type=radio]:disabled::before,
+form select.red[type=radio]:disabled::before, form input.red[type=file]:disabled::file-selector-button, form select.red[type=file]:disabled::file-selector-button, form input.red[type=color]:disabled, form select.red[type=color]:disabled {
+  background-color: hsl(0, 100%, 80%);
+  border-color: hsl(0, 100%, 70%);
+  color: hsla(0, 0%, 40%, 0.7);
+}
+.button.orange, form input.orange[type=checkbox]::before, form select.orange[type=checkbox]::before,
+form input.orange[type=radio]::before,
+form select.orange[type=radio]::before, form input.orange[type=file]::file-selector-button, form select.orange[type=file]::file-selector-button, form input.orange[type=color], form select.orange[type=color] {
+  background-color: hsl(30, 100%, 50%);
+  border-color: hsl(30, 100%, 45%);
+  color: hsla(0, 0%, 0%, 0.7);
+  box-shadow: 0 0.5rem hsl(30, 100%, 35%);
+}
+.button.orange:hover:not(:disabled), form input.orange[type=checkbox]:hover:not(:disabled)::before, form select.orange[type=checkbox]:hover:not(:disabled)::before,
+form input.orange[type=radio]:hover:not(:disabled)::before,
+form select.orange[type=radio]:hover:not(:disabled)::before, form input.orange[type=file]:hover:not(:disabled)::file-selector-button, form select.orange[type=file]:hover:not(:disabled)::file-selector-button, form input.orange[type=color]:hover:not(:disabled), form select.orange[type=color]:hover:not(:disabled) {
+  background-color: hsl(30, 100%, 40%);
+  border-color: hsl(30, 100%, 35%);
+  box-shadow: 0 0.5rem hsl(30, 100%, 25%);
+}
+.button.orange:active:not(:disabled), form input.orange[type=checkbox]:active:not(:disabled)::before, form select.orange[type=checkbox]:active:not(:disabled)::before,
+form input.orange[type=radio]:active:not(:disabled)::before,
+form select.orange[type=radio]:active:not(:disabled)::before, form input.orange[type=file]:active:not(:disabled)::file-selector-button, form select.orange[type=file]:active:not(:disabled)::file-selector-button, form input.orange[type=color]:active:not(:disabled), form select.orange[type=color]:active:not(:disabled) {
+  background-color: hsl(30, 100%, 35%);
+  border-color: hsl(30, 100%, 25%);
+  box-shadow: 0 0.25rem hsl(30, 100%, 20%);
+}
+.button.orange:disabled, form input.orange[type=checkbox]:disabled::before, form select.orange[type=checkbox]:disabled::before,
+form input.orange[type=radio]:disabled::before,
+form select.orange[type=radio]:disabled::before, form input.orange[type=file]:disabled::file-selector-button, form select.orange[type=file]:disabled::file-selector-button, form input.orange[type=color]:disabled, form select.orange[type=color]:disabled {
+  background-color: hsl(30, 100%, 80%);
+  border-color: hsl(30, 100%, 70%);
+  color: hsla(0, 0%, 40%, 0.7);
+}
+.button.yellow, form input.yellow[type=checkbox]::before, form select.yellow[type=checkbox]::before,
+form input.yellow[type=radio]::before,
+form select.yellow[type=radio]::before, form input.yellow[type=file]::file-selector-button, form select.yellow[type=file]::file-selector-button, form input.yellow[type=color], form select.yellow[type=color] {
+  background-color: hsl(60, 100%, 50%);
+  border-color: hsl(60, 100%, 45%);
+  color: hsla(0, 0%, 0%, 0.7);
+  box-shadow: 0 0.5rem hsl(60, 100%, 35%);
+}
+.button.yellow:hover:not(:disabled), form input.yellow[type=checkbox]:hover:not(:disabled)::before, form select.yellow[type=checkbox]:hover:not(:disabled)::before,
+form input.yellow[type=radio]:hover:not(:disabled)::before,
+form select.yellow[type=radio]:hover:not(:disabled)::before, form input.yellow[type=file]:hover:not(:disabled)::file-selector-button, form select.yellow[type=file]:hover:not(:disabled)::file-selector-button, form input.yellow[type=color]:hover:not(:disabled), form select.yellow[type=color]:hover:not(:disabled) {
+  background-color: hsl(60, 100%, 40%);
+  border-color: hsl(60, 100%, 35%);
+  box-shadow: 0 0.5rem hsl(60, 100%, 25%);
+}
+.button.yellow:active:not(:disabled), form input.yellow[type=checkbox]:active:not(:disabled)::before, form select.yellow[type=checkbox]:active:not(:disabled)::before,
+form input.yellow[type=radio]:active:not(:disabled)::before,
+form select.yellow[type=radio]:active:not(:disabled)::before, form input.yellow[type=file]:active:not(:disabled)::file-selector-button, form select.yellow[type=file]:active:not(:disabled)::file-selector-button, form input.yellow[type=color]:active:not(:disabled), form select.yellow[type=color]:active:not(:disabled) {
+  background-color: hsl(60, 100%, 35%);
+  border-color: hsl(60, 100%, 25%);
+  box-shadow: 0 0.25rem hsl(60, 100%, 20%);
+}
+.button.yellow:disabled, form input.yellow[type=checkbox]:disabled::before, form select.yellow[type=checkbox]:disabled::before,
+form input.yellow[type=radio]:disabled::before,
+form select.yellow[type=radio]:disabled::before, form input.yellow[type=file]:disabled::file-selector-button, form select.yellow[type=file]:disabled::file-selector-button, form input.yellow[type=color]:disabled, form select.yellow[type=color]:disabled {
+  background-color: hsl(60, 100%, 80%);
+  border-color: hsl(60, 100%, 70%);
+  color: hsla(0, 0%, 40%, 0.7);
+}
+.button.lime, form input.lime[type=checkbox]::before, form select.lime[type=checkbox]::before,
+form input.lime[type=radio]::before,
+form select.lime[type=radio]::before, form input.lime[type=file]::file-selector-button, form select.lime[type=file]::file-selector-button, form input.lime[type=color], form select.lime[type=color] {
+  background-color: hsl(90, 100%, 50%);
+  border-color: hsl(90, 100%, 45%);
+  color: hsla(0, 0%, 0%, 0.7);
+  box-shadow: 0 0.5rem hsl(90, 100%, 35%);
+}
+.button.lime:hover:not(:disabled), form input.lime[type=checkbox]:hover:not(:disabled)::before, form select.lime[type=checkbox]:hover:not(:disabled)::before,
+form input.lime[type=radio]:hover:not(:disabled)::before,
+form select.lime[type=radio]:hover:not(:disabled)::before, form input.lime[type=file]:hover:not(:disabled)::file-selector-button, form select.lime[type=file]:hover:not(:disabled)::file-selector-button, form input.lime[type=color]:hover:not(:disabled), form select.lime[type=color]:hover:not(:disabled) {
+  background-color: hsl(90, 100%, 40%);
+  border-color: hsl(90, 100%, 35%);
+  box-shadow: 0 0.5rem hsl(90, 100%, 25%);
+}
+.button.lime:active:not(:disabled), form input.lime[type=checkbox]:active:not(:disabled)::before, form select.lime[type=checkbox]:active:not(:disabled)::before,
+form input.lime[type=radio]:active:not(:disabled)::before,
+form select.lime[type=radio]:active:not(:disabled)::before, form input.lime[type=file]:active:not(:disabled)::file-selector-button, form select.lime[type=file]:active:not(:disabled)::file-selector-button, form input.lime[type=color]:active:not(:disabled), form select.lime[type=color]:active:not(:disabled) {
+  background-color: hsl(90, 100%, 35%);
+  border-color: hsl(90, 100%, 25%);
+  box-shadow: 0 0.25rem hsl(90, 100%, 20%);
+}
+.button.lime:disabled, form input.lime[type=checkbox]:disabled::before, form select.lime[type=checkbox]:disabled::before,
+form input.lime[type=radio]:disabled::before,
+form select.lime[type=radio]:disabled::before, form input.lime[type=file]:disabled::file-selector-button, form select.lime[type=file]:disabled::file-selector-button, form input.lime[type=color]:disabled, form select.lime[type=color]:disabled {
+  background-color: hsl(90, 100%, 80%);
+  border-color: hsl(90, 100%, 70%);
+  color: hsla(0, 0%, 40%, 0.7);
+}
+.button.green, form input.green[type=checkbox]::before, form select.green[type=checkbox]::before,
+form input.green[type=radio]::before,
+form select.green[type=radio]::before, form input.green[type=file]::file-selector-button, form select.green[type=file]::file-selector-button, form input.green[type=color], form select.green[type=color] {
+  background-color: hsl(120, 100%, 35%);
+  border-color: hsl(120, 100%, 30%);
+  color: hsla(0, 0%, 100%, 0.8);
+  box-shadow: 0 0.5rem hsl(120, 100%, 20%);
+}
+.button.green:hover:not(:disabled), form input.green[type=checkbox]:hover:not(:disabled)::before, form select.green[type=checkbox]:hover:not(:disabled)::before,
+form input.green[type=radio]:hover:not(:disabled)::before,
+form select.green[type=radio]:hover:not(:disabled)::before, form input.green[type=file]:hover:not(:disabled)::file-selector-button, form select.green[type=file]:hover:not(:disabled)::file-selector-button, form input.green[type=color]:hover:not(:disabled), form select.green[type=color]:hover:not(:disabled) {
+  background-color: hsl(120, 100%, 25%);
+  border-color: hsl(120, 100%, 20%);
+  box-shadow: 0 0.5rem hsl(120, 100%, 10%);
+}
+.button.green:active:not(:disabled), form input.green[type=checkbox]:active:not(:disabled)::before, form select.green[type=checkbox]:active:not(:disabled)::before,
+form input.green[type=radio]:active:not(:disabled)::before,
+form select.green[type=radio]:active:not(:disabled)::before, form input.green[type=file]:active:not(:disabled)::file-selector-button, form select.green[type=file]:active:not(:disabled)::file-selector-button, form input.green[type=color]:active:not(:disabled), form select.green[type=color]:active:not(:disabled) {
+  background-color: hsl(120, 100%, 20%);
+  border-color: hsl(120, 100%, 10%);
+  box-shadow: 0 0.25rem hsl(120, 100%, 5%);
+}
+.button.green:disabled, form input.green[type=checkbox]:disabled::before, form select.green[type=checkbox]:disabled::before,
+form input.green[type=radio]:disabled::before,
+form select.green[type=radio]:disabled::before, form input.green[type=file]:disabled::file-selector-button, form select.green[type=file]:disabled::file-selector-button, form input.green[type=color]:disabled, form select.green[type=color]:disabled {
+  background-color: hsl(120, 100%, 65%);
+  border-color: hsl(120, 100%, 55%);
+  color: hsla(0, 0%, 100%, 0.8);
+}
+.button.teal, form input.teal[type=checkbox]::before, form select.teal[type=checkbox]::before,
+form input.teal[type=radio]::before,
+form select.teal[type=radio]::before, form input.teal[type=file]::file-selector-button, form select.teal[type=file]::file-selector-button, form input.teal[type=color], form select.teal[type=color] {
+  background-color: hsl(180, 100%, 35%);
+  border-color: hsl(180, 100%, 30%);
+  color: hsla(0, 0%, 100%, 0.8);
+  box-shadow: 0 0.5rem hsl(180, 100%, 20%);
+}
+.button.teal:hover:not(:disabled), form input.teal[type=checkbox]:hover:not(:disabled)::before, form select.teal[type=checkbox]:hover:not(:disabled)::before,
+form input.teal[type=radio]:hover:not(:disabled)::before,
+form select.teal[type=radio]:hover:not(:disabled)::before, form input.teal[type=file]:hover:not(:disabled)::file-selector-button, form select.teal[type=file]:hover:not(:disabled)::file-selector-button, form input.teal[type=color]:hover:not(:disabled), form select.teal[type=color]:hover:not(:disabled) {
+  background-color: hsl(180, 100%, 25%);
+  border-color: hsl(180, 100%, 20%);
+  box-shadow: 0 0.5rem hsl(180, 100%, 10%);
+}
+.button.teal:active:not(:disabled), form input.teal[type=checkbox]:active:not(:disabled)::before, form select.teal[type=checkbox]:active:not(:disabled)::before,
+form input.teal[type=radio]:active:not(:disabled)::before,
+form select.teal[type=radio]:active:not(:disabled)::before, form input.teal[type=file]:active:not(:disabled)::file-selector-button, form select.teal[type=file]:active:not(:disabled)::file-selector-button, form input.teal[type=color]:active:not(:disabled), form select.teal[type=color]:active:not(:disabled) {
+  background-color: hsl(180, 100%, 20%);
+  border-color: hsl(180, 100%, 10%);
+  box-shadow: 0 0.25rem hsl(180, 100%, 5%);
+}
+.button.teal:disabled, form input.teal[type=checkbox]:disabled::before, form select.teal[type=checkbox]:disabled::before,
+form input.teal[type=radio]:disabled::before,
+form select.teal[type=radio]:disabled::before, form input.teal[type=file]:disabled::file-selector-button, form select.teal[type=file]:disabled::file-selector-button, form input.teal[type=color]:disabled, form select.teal[type=color]:disabled {
+  background-color: hsl(180, 100%, 65%);
+  border-color: hsl(180, 100%, 55%);
+  color: hsla(0, 0%, 100%, 0.8);
+}
+.button.blue, form input.blue[type=checkbox]::before, form select.blue[type=checkbox]::before,
+form input.blue[type=radio]::before,
+form select.blue[type=radio]::before, form input.blue[type=file]::file-selector-button, form select.blue[type=file]::file-selector-button, form input.blue[type=color], form select.blue[type=color] {
+  background-color: hsl(220, 100%, 50%);
+  border-color: hsl(220, 100%, 45%);
+  color: hsla(0, 0%, 0%, 0.7);
+  box-shadow: 0 0.5rem hsl(220, 100%, 35%);
+}
+.button.blue:hover:not(:disabled), form input.blue[type=checkbox]:hover:not(:disabled)::before, form select.blue[type=checkbox]:hover:not(:disabled)::before,
+form input.blue[type=radio]:hover:not(:disabled)::before,
+form select.blue[type=radio]:hover:not(:disabled)::before, form input.blue[type=file]:hover:not(:disabled)::file-selector-button, form select.blue[type=file]:hover:not(:disabled)::file-selector-button, form input.blue[type=color]:hover:not(:disabled), form select.blue[type=color]:hover:not(:disabled) {
+  background-color: hsl(220, 100%, 40%);
+  border-color: hsl(220, 100%, 35%);
+  box-shadow: 0 0.5rem hsl(220, 100%, 25%);
+}
+.button.blue:active:not(:disabled), form input.blue[type=checkbox]:active:not(:disabled)::before, form select.blue[type=checkbox]:active:not(:disabled)::before,
+form input.blue[type=radio]:active:not(:disabled)::before,
+form select.blue[type=radio]:active:not(:disabled)::before, form input.blue[type=file]:active:not(:disabled)::file-selector-button, form select.blue[type=file]:active:not(:disabled)::file-selector-button, form input.blue[type=color]:active:not(:disabled), form select.blue[type=color]:active:not(:disabled) {
+  background-color: hsl(220, 100%, 35%);
+  border-color: hsl(220, 100%, 25%);
+  box-shadow: 0 0.25rem hsl(220, 100%, 20%);
+}
+.button.blue:disabled, form input.blue[type=checkbox]:disabled::before, form select.blue[type=checkbox]:disabled::before,
+form input.blue[type=radio]:disabled::before,
+form select.blue[type=radio]:disabled::before, form input.blue[type=file]:disabled::file-selector-button, form select.blue[type=file]:disabled::file-selector-button, form input.blue[type=color]:disabled, form select.blue[type=color]:disabled {
+  background-color: hsl(220, 100%, 80%);
+  border-color: hsl(220, 100%, 70%);
+  color: hsla(0, 0%, 40%, 0.7);
+}
+.button.purple, form input.purple[type=checkbox]::before, form select.purple[type=checkbox]::before,
+form input.purple[type=radio]::before,
+form select.purple[type=radio]::before, form input.purple[type=file]::file-selector-button, form select.purple[type=file]::file-selector-button, form input.purple[type=color], form select.purple[type=color] {
+  background-color: hsl(280, 100%, 50%);
+  border-color: hsl(280, 100%, 45%);
+  color: hsla(0, 0%, 0%, 0.7);
+  box-shadow: 0 0.5rem hsl(280, 100%, 35%);
+}
+.button.purple:hover:not(:disabled), form input.purple[type=checkbox]:hover:not(:disabled)::before, form select.purple[type=checkbox]:hover:not(:disabled)::before,
+form input.purple[type=radio]:hover:not(:disabled)::before,
+form select.purple[type=radio]:hover:not(:disabled)::before, form input.purple[type=file]:hover:not(:disabled)::file-selector-button, form select.purple[type=file]:hover:not(:disabled)::file-selector-button, form input.purple[type=color]:hover:not(:disabled), form select.purple[type=color]:hover:not(:disabled) {
+  background-color: hsl(280, 100%, 40%);
+  border-color: hsl(280, 100%, 35%);
+  box-shadow: 0 0.5rem hsl(280, 100%, 25%);
+}
+.button.purple:active:not(:disabled), form input.purple[type=checkbox]:active:not(:disabled)::before, form select.purple[type=checkbox]:active:not(:disabled)::before,
+form input.purple[type=radio]:active:not(:disabled)::before,
+form select.purple[type=radio]:active:not(:disabled)::before, form input.purple[type=file]:active:not(:disabled)::file-selector-button, form select.purple[type=file]:active:not(:disabled)::file-selector-button, form input.purple[type=color]:active:not(:disabled), form select.purple[type=color]:active:not(:disabled) {
+  background-color: hsl(280, 100%, 35%);
+  border-color: hsl(280, 100%, 25%);
+  box-shadow: 0 0.25rem hsl(280, 100%, 20%);
+}
+.button.purple:disabled, form input.purple[type=checkbox]:disabled::before, form select.purple[type=checkbox]:disabled::before,
+form input.purple[type=radio]:disabled::before,
+form select.purple[type=radio]:disabled::before, form input.purple[type=file]:disabled::file-selector-button, form select.purple[type=file]:disabled::file-selector-button, form input.purple[type=color]:disabled, form select.purple[type=color]:disabled {
+  background-color: hsl(280, 100%, 80%);
+  border-color: hsl(280, 100%, 70%);
+  color: hsla(0, 0%, 40%, 0.7);
+}
+.button.pink, form input.pink[type=checkbox]::before, form select.pink[type=checkbox]::before,
+form input.pink[type=radio]::before,
+form select.pink[type=radio]::before, form input.pink[type=file]::file-selector-button, form select.pink[type=file]::file-selector-button, form input.pink[type=color], form select.pink[type=color] {
+  background-color: hsl(320, 100%, 50%);
+  border-color: hsl(320, 100%, 45%);
+  color: hsla(0, 0%, 0%, 0.7);
+  box-shadow: 0 0.5rem hsl(320, 100%, 35%);
+}
+.button.pink:hover:not(:disabled), form input.pink[type=checkbox]:hover:not(:disabled)::before, form select.pink[type=checkbox]:hover:not(:disabled)::before,
+form input.pink[type=radio]:hover:not(:disabled)::before,
+form select.pink[type=radio]:hover:not(:disabled)::before, form input.pink[type=file]:hover:not(:disabled)::file-selector-button, form select.pink[type=file]:hover:not(:disabled)::file-selector-button, form input.pink[type=color]:hover:not(:disabled), form select.pink[type=color]:hover:not(:disabled) {
+  background-color: hsl(320, 100%, 40%);
+  border-color: hsl(320, 100%, 35%);
+  box-shadow: 0 0.5rem hsl(320, 100%, 25%);
+}
+.button.pink:active:not(:disabled), form input.pink[type=checkbox]:active:not(:disabled)::before, form select.pink[type=checkbox]:active:not(:disabled)::before,
+form input.pink[type=radio]:active:not(:disabled)::before,
+form select.pink[type=radio]:active:not(:disabled)::before, form input.pink[type=file]:active:not(:disabled)::file-selector-button, form select.pink[type=file]:active:not(:disabled)::file-selector-button, form input.pink[type=color]:active:not(:disabled), form select.pink[type=color]:active:not(:disabled) {
+  background-color: hsl(320, 100%, 35%);
+  border-color: hsl(320, 100%, 25%);
+  box-shadow: 0 0.25rem hsl(320, 100%, 20%);
+}
+.button.pink:disabled, form input.pink[type=checkbox]:disabled::before, form select.pink[type=checkbox]:disabled::before,
+form input.pink[type=radio]:disabled::before,
+form select.pink[type=radio]:disabled::before, form input.pink[type=file]:disabled::file-selector-button, form select.pink[type=file]:disabled::file-selector-button, form input.pink[type=color]:disabled, form select.pink[type=color]:disabled {
+  background-color: hsl(320, 100%, 80%);
+  border-color: hsl(320, 100%, 70%);
+  color: hsla(0, 0%, 40%, 0.7);
+}
+
+.group {
+  display: flex;
+}
+.group .button, .group form input[type=checkbox]::before, .group form select[type=checkbox]::before, form .group input[type=checkbox]::before, form .group select[type=checkbox]::before,
+.group form input[type=radio]::before,
+.group form select[type=radio]::before,
+form .group input[type=radio]::before,
+form .group select[type=radio]::before, .group form input[type=file]::file-selector-button, .group form select[type=file]::file-selector-button, form .group input[type=file]::file-selector-button, form .group select[type=file]::file-selector-button, .group form input[type=color], .group form select[type=color], form .group input[type=color], form .group select[type=color] {
+  border-radius: 0;
+}
+.group .button:first-child, .group form input[type=checkbox]:first-child::before, .group form select[type=checkbox]:first-child::before, form .group input[type=checkbox]:first-child::before, form .group select[type=checkbox]:first-child::before,
+.group form input[type=radio]:first-child::before,
+.group form select[type=radio]:first-child::before,
+form .group input[type=radio]:first-child::before,
+form .group select[type=radio]:first-child::before, .group form input[type=file]:first-child::file-selector-button, .group form select[type=file]:first-child::file-selector-button, form .group input[type=file]:first-child::file-selector-button, form .group select[type=file]:first-child::file-selector-button, .group form input[type=color]:first-child, .group form select[type=color]:first-child, form .group input[type=color]:first-child, form .group select[type=color]:first-child {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+.group .button:last-child, .group form input[type=checkbox]:last-child::before, .group form select[type=checkbox]:last-child::before, form .group input[type=checkbox]:last-child::before, form .group select[type=checkbox]:last-child::before,
+.group form input[type=radio]:last-child::before,
+.group form select[type=radio]:last-child::before,
+form .group input[type=radio]:last-child::before,
+form .group select[type=radio]:last-child::before, .group form input[type=file]:last-child::file-selector-button, .group form select[type=file]:last-child::file-selector-button, form .group input[type=file]:last-child::file-selector-button, form .group select[type=file]:last-child::file-selector-button, .group form input[type=color]:last-child, .group form select[type=color]:last-child, form .group input[type=color]:last-child, form .group select[type=color]:last-child {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.card, form fieldset, form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 2rem 1rem 1rem 1rem;
+  margin: 2rem 0 0 0;
+  position: relative;
+  border-width: 0.2rem;
+  border-style: solid;
+  border-radius: 0.5rem;
+  border-color: hsl(210, 10%, 80%);
+  background-color: hsl(0, 0%, 95%);
+  box-shadow: 0 0 0.5rem hsla(210, 10%, 70%, 0.3);
+  opacity: 1;
+  transition: opacity 0.1s ease-in-out;
+}
+.card.no-title, form fieldset.no-title, form.no-title {
+  padding-top: 1rem;
+  margin: 0;
+}
+.card.closed, form fieldset.closed, form.closed {
+  opacity: 0;
+  pointer-events: none;
+}
+.card > .close, form fieldset > .close, form > .close {
+  position: absolute;
+  right: -1.05rem;
+  top: -1.05rem;
+}
+.card > h1, form fieldset > h1, form > h1 {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  padding: 0.25rem 2rem;
+  border-width: 0.2rem;
+  border-style: solid;
+  border-radius: 0.5rem;
+  border-color: hsl(210, 10%, 80%);
+  margin: 0;
+  position: absolute;
+  font-size: 1.5rem;
+  background-color: hsl(210, 17%, 98%);
+  box-shadow: 0 0.5rem 0.5rem hsla(210, 10%, 70%, 0.3);
+  top: -1.6rem;
+  left: 1rem;
+}
+.card > h1.center, form fieldset > h1.center, form > h1.center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.card > h1.right, form fieldset > h1.right, form > h1.right {
+  left: auto;
+  right: 1rem;
+}
+.card > h2, form fieldset > h2, form > h2 {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-size: 1.25rem;
+  margin: 0;
+}
+.card > .buttons, form fieldset > .buttons, form > .buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+.card > .buttons.col, form fieldset > .buttons.col, form > .buttons.col {
+  flex-direction: column;
+}
+.card > .buttons > .button, form .card > .buttons > input[type=checkbox]::before, form .card > .buttons > select[type=checkbox]::before,
+form .card > .buttons > input[type=radio]::before,
+form .card > .buttons > select[type=radio]::before, form .card > .buttons > input[type=file]::file-selector-button, form .card > .buttons > select[type=file]::file-selector-button, form .card > .buttons > input[type=color], form .card > .buttons > select[type=color], form fieldset > .buttons > .button, form fieldset > .buttons > input[type=checkbox]::before, form fieldset > .buttons > select[type=checkbox]::before,
+form fieldset > .buttons > input[type=radio]::before,
+form fieldset > .buttons > select[type=radio]::before, form fieldset > .buttons > input[type=file]::file-selector-button, form fieldset > .buttons > select[type=file]::file-selector-button, form fieldset > .buttons > input[type=color], form fieldset > .buttons > select[type=color], form > .buttons > .button, form > .buttons > input[type=checkbox]::before, form > .buttons > select[type=checkbox]::before,
+form > .buttons > input[type=radio]::before,
+form > .buttons > select[type=radio]::before, form > .buttons > input[type=file]::file-selector-button, form > .buttons > select[type=file]::file-selector-button, form > .buttons > input[type=color], form > .buttons > select[type=color] {
+  flex: 1;
+}
+.card.xxs, form fieldset.xxs, form.xxs {
+  max-width: 200px;
+}
+.card.xs, form fieldset.xs, form.xs {
+  max-width: 300px;
+}
+.card.sm, form fieldset.sm, form.sm {
+  max-width: 400px;
+}
+.card.md, form fieldset.md, form.md {
+  max-width: 600px;
+}
+.card.lg, form fieldset.lg, form.lg {
+  max-width: 800px;
+}
+.card.xl, form fieldset.xl, form.xl {
+  max-width: 1000px;
+}
+.card.xxl, form fieldset.xxl, form.xxl {
+  max-width: 1200px;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: max-content 1fr;
+}
+form label {
+  display: block;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  align-self: flex-start;
+  justify-self: start;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+form > .buttons {
+  grid-column: span 2;
+}
+form > .radio {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 0.5rem;
+}
+form fieldset {
+  grid-column: span 2;
+  box-shadow: none;
+  padding: 1.5rem 1rem 1rem 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: max-content 1fr;
+}
+form fieldset legend {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  padding: 0.125rem 1rem;
+  border-width: 0.2rem;
+  border-style: solid;
+  border-radius: 0.5rem;
+  border-color: hsl(210, 10%, 80%);
+  margin: 0;
+  position: absolute;
+  font-size: 1rem;
+  background-color: hsl(210, 17%, 98%);
+  box-shadow: 0 0.5rem 0.5rem hsla(210, 10%, 70%, 0.3);
+  top: -1.1rem;
+  left: 1rem;
+}
+form input, form select,
+form textarea {
+  height: 2.5rem;
+  padding: 0.5rem;
+  border-width: 0.2rem;
+  border-style: solid;
+  border-radius: 0.5rem;
+  border-color: hsl(210, 10%, 80%);
+  font-size: inherit;
+}
+form input:focus, form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: hsl(211, 100%, 50%);
+}
+form input[type=color], form select[type=color] {
+  padding: 0.2rem;
+  width: 100%;
+  outline: none;
+}
+form input[type=color]::-webkit-color-swatch-wrapper, form select[type=color]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+form input[type=color]::-webkit-color-swatch, form select[type=color]::-webkit-color-swatch {
+  border: none;
+  border-radius: 0.25rem;
+}
+form textarea {
+  height: auto;
+  min-height: 7.5rem;
+  resize: vertical;
+}
+form input[type=file], form select[type=file] {
+  border: none;
+  padding: 0;
+  height: auto;
+  font-size: 0.75rem;
+  width: 100%;
+  color: hsl(0, 0%, 40%);
+}
+form input[type=file]::file-selector-button, form select[type=file]::file-selector-button {
+  width: 100%;
+}
+form input[type=checkbox], form select[type=checkbox],
+form input[type=radio],
+form select[type=radio] {
+  width: 0;
+  height: 0;
+}
+form input[type=checkbox]::before, form select[type=checkbox]::before,
+form input[type=radio]::before,
+form select[type=radio]::before {
+  content: "";
+}
+form input[type=checkbox]:checked:hover::before, form select[type=checkbox]:checked:hover::before,
+form input[type=radio]:checked:hover::before,
+form select[type=radio]:checked:hover::before {
+  box-shadow: 0 0.25rem hsl(210, 17%, 55%);
+}
+form input[type=checkbox]:checked::before, form select[type=checkbox]:checked::before,
+form input[type=radio]:checked::before,
+form select[type=radio]:checked::before {
+  content: "✓";
+  top: 0.25rem;
+  background-color: hsl(211, 100%, 50%);
+  border-color: hsl(211, 100%, 35%);
+  box-shadow: 0 0.25rem hsl(211, 100%, 30%);
+  color: hsla(0, 0%, 0%, 0.7);
+}
+form input[type=checkbox]:checked:hover::before, form select[type=checkbox]:checked:hover::before,
+form input[type=radio]:checked:hover::before,
+form select[type=radio]:checked:hover::before {
+  box-shadow: 0 0.25rem hsl(211, 100%, 20%);
+  background-color: hsl(211, 100%, 40%);
+  border-color: hsl(211, 100%, 25%);
+}
+form select {
+  padding: 0.25rem;
+}
